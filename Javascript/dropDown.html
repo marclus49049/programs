@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>DropDown</title>
+    <script type="text/javascript">
+      function displayOption() {
+        alert("The value of the option is "+ document.getElementById("selectoption").value);
+      }
+      function displayList() {
+        for (i=0; i<10; i++){
+          document.getElementById("selectoption").innerHTML += "<option value='v"+i+"'>v"+i+"</option>";
+        }
+      }
+    </script>
+  </head>
+  <body onload="displayList()">
+    <form name="form" method="post">
+      <b>Option</b><br>
+      <select name="selectOption" id="selectoption">
+
+      </select>
+      <br>
+      <input type="button" name="display" value="Click Me" onclick="displayOption()">
+    </form>
+  </body>
+</html>
