@@ -3,13 +3,14 @@ import java.io.*;
 import java.util.*;
 
 class FlashCardData implements CardSearchable {
+  int size;
   ArrayList <FlashCard> flashCards = new ArrayList<>(); // will store the object of flash card
 
   // Read date from the file and then creates an object of FlashCard and adds into the array list
   public void loadData(){
     //read all data from cards_data.txt and put it in array of flash card
     // The name of the file to open.
-    String fileName = "./cards_data.txt";
+    String fileName = "/home/marclus/College/Java/Assignment/Card/com/symbi/Card/cards_data.txt";
     String line;
     String [] data;
     try {
@@ -34,16 +35,26 @@ class FlashCardData implements CardSearchable {
   // also it generates a random integer less than the size of the arrayList cards and then returns only one object from that arrayList form that randomly genereated integer
   public Card searchCard(String sub){
     ArrayList<FlashCard> cards;
+    Card card;
     try {
       cards = searchSubject(sub);
       Random random = new Random();
-      int index = random.nextInt(cards.size());
-      return cards.get(index);
+      size = cards.size();
+      for (int i= 0; i < size; i++){
+        int index = random.nextInt(cards.size());
+        card = cards.get(index);
+        cards.remove(index);
+        return card;
+      }
     } catch (CardNotFoundException e){
       System.out.print(e);
     }
     return null;
     }
+
+  public int getSize(){
+    return size;
+  }
 
   // this method returns an arratlist of FlashCard from the variable flashCard
   // it searches from that arrayList and check of the subject is equal to the subject in that card and then copies that object into a new arraylist
@@ -51,7 +62,7 @@ class FlashCardData implements CardSearchable {
   public ArrayList<FlashCard> searchSubject(String sub) throws CardNotFoundException{
     ArrayList<FlashCard> cards = new ArrayList<>();
     for (int i = 0; i< flashCards.size(); i++){
-      if (flashCards.get(i).equals(sub)){
+      if (flashCards.get(i).cardGetSubject().equals(sub)){
         cards.add(flashCards.get(i));
       }
     }
