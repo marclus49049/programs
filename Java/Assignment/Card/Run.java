@@ -39,6 +39,7 @@ public class Run {
           printSubjects();
           break;
         case "2":
+          System.out.println("Thank you for using my program....\nBye....");
           System.exit(0);
           break;
         default:
