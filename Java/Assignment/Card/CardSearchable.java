@@ -1,5 +1,5 @@
 package com.symbi.Card;
 
-interface CardSearchable {
-  public Card searchCard(String sub);
+public interface CardSearchable {
+  Card searchCard(String sub);
 }

@@ -1,15 +1,26 @@
 package com.symbi.Card;
 
-abstract class Card{
-  private String subject, answer, question;
-
+public abstract class Card{
+  private String subject, question, answer;
   //setter methods
-  abstract void cardSetSubject(String subject);
-  abstract void cardSetAnswer(String answer);
-  abstract void cardSetQuestion(String question);
+  void cardSetSubject(String subject){
+    this.subject = subject;
+  }
+  void cardSetAnswer(String answer){
+    this.answer = answer;
+  }
+  void cardSetQuestion(String question){
+    this.question = question;
+  }
 
   //getter methods
-  abstract String cardGetSubject();
-  abstract String cardGetAnswer();
-  abstract String cardGetQuestion();
+  String cardGetSubject(){
+    return subject;
+  }
+  String cardGetAnswer(){
+    return answer;
+  }
+  String cardGetQuestion(){
+    return question;
+  }
 }
