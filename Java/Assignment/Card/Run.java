@@ -15,23 +15,21 @@ public class Run {
     String subject = input.readLine();
     Card card;
     card = fcData.searchCard(subject);
-    for (int i= 0; i < fcData.getSize(); i++){
-      System.out.println(card.cardGetQuestion());
+    System.out.println(card.cardGetQuestion());
 
     try {
-        Thread.sleep(5000);
+        Thread.sleep(500);
     } catch (InterruptedException e) {
-        e.printStackTrace();
+        System.out.println(e);
     }
     System.out.println(card.cardGetAnswer());
-  }
 }
   // Main method here
   public static void main(String[] args) throws IOException {
     BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 
     while(true){
-      System.out.println("Press 1 for entering the subject\nPress 2 to exit");
+      System.out.println("\n\n\nPress 1 for entering the subject\nPress 2 to exit");
       System.out.print("Select Option: ");
       String choice = input.readLine();
       switch (choice) {
