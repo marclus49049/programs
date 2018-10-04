@@ -27,5 +27,7 @@ class HashSetDemo {
 
       System.out.println(itr.next());
     }
+
+    //hashCode can be same by equals method can be true or false so basically we have to check if the hashCode is same and equals should return true.....
   }
 }
