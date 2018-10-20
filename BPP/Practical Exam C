@@ -1,0 +1,57 @@
+Practical Exam
+
+Instruction:-
+
+Create following files:
+1) date.h - constants (if any) /prototypes
+2) date.c - All Functions
+3) testdate.c - test program to verify the functions written in date.c
+4) Type the your answers in the text box provide (Mention PRN/Name for all group members) Only one person per group should submit the answers)
+
+
+Write C functions to perform following tasks:
+
+1) A function to accept an integer as value for year and check it is a leap year or not. [5 Marks]
+
+Leap  year:
+A leap year is exactly divisible by 4 except for century years (years ending with 00). The century year is a leap year only if it is perfectly divisible by 400.
+Example: 1900 Not a leap year, 2000 is a leap year.
+
+2) A function to accept 3 integers to represent day, month and year. The function checks if the given values form a valid date ie.  day between 1 to 28/29/30/31 as appropriate for the month between 1 to 12 and year should be 4 digits. If valid date return TRUE otherwise FALSE. [5 marks]
+
+3) A function that accepts 3 integers as representation of a date (D,M,Y) and compute the Julian day for the given date as described below.                        [10 marks]
+
+Julian day:
+It is possible to calculate easily the day of the week on which a given date falls, if one knowns the Julian day for that date. for example, January 1 is always Julian day 1, since it is the first day of the year, whereas December 31 is day 365 in a non-leap year or day 366 in a leap year.
+
+4) Write a function to accept 3 integers as a representation of a date (D,M,Y) and compute the day of week for given date (if it is valid)    [5 marks]
+
+The    day of the week is calculated as follows:
+    year = year in question(all four digits)
+    Julian_day = Julian day of date in question(1 to 366)
+    fours = integer portion of(year-1) / 4
+    hundreds = integer portion of (year-1)/100
+    four_hundreds = integer portion of (year - 1)/400
+ 
+day_of _the _week = (year + Julian_day + fours - hundreds + four_hundreds)%7
+where:
+result     means
+0          Saturday
+1          Sunday
+2          Monday
+3          Tuesday
+4          Wednesday
+5          Thursday
+6          Friday
+
+
+5) Write a function to accept 3 integers representing a date and return the corresponding day of Week as string. (Refer to problem 4)    [5 marks]
+
+For example: for the date 21 September 2018, day of week is 'Friday"
+
+6) Write a function that accepts three integers representing date and return a date as string (if valid) as shown: "22-09-18"    [10 marks]
+
+Bonus Question:
+
+Write a program to accept 3 integers representing a date and print the Date in long format as shown:
+"22 September 2018, Saturday"
