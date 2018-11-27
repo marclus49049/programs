@@ -1,0 +1,102 @@
+grep [option] pattern [files]
+-c : count of lines that match the pattern
+-i : ignores case
+-l : list of file names only
+-v : prints lines that do not match pattern
+-E : egrep
+-w : match whole word
+-o : print only matched part of line
+-n : matched line and number
+-e exp : expression
+
+egrep -w '^(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[0-9][0-9]|[0-9]).(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[0-9][0-9]|[0-9]).(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[0-9][0-9]|[0-9]).(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[0-9][0-9]|[0-9])$' // IP
+
+regex : ? 0 or 1 times (previous char), * 0 or more, + 1 or more, {n} n times, {n,} n or more times, {n,m} min n times and max m times
+in basic '{,}', '(,)','|','+','?' we have to escape in egrep we dont for their special use
+
+
+uniq [option]
+eg: uniq myfile.txt
+-c : prefix line with a number represents how many times they occured
+-d : prints only duplicate lines
+-i : ignore case
+-u : prints only unique lines
+-D : prints all duplicate lines
+-w : compare no more than n char in line
+
+This is a test file for the uniq command.
+It contains some repeated lines.
+It contains some repeated lines.
+And some are different.
+It contains some repeated lines.
+It contains some repeated lines.
+And some are different.
+It contains some repeated lines.
+
+marclus@alpha-ceph:~/Desktop/clone/Linux/test$ uniq uniq.txt
+This is a test file for the uniq command.
+It contains some repeated lines.
+And some are different.
+It contains some repeated lines.
+
+marclus@alpha-ceph:~/Desktop/clone/Linux/test$ uniq -u uniq.txt
+This is a test file for the uniq command.
+And some are different.
+And some are different.
+It contains some repeated lines.
+
+marclus@alpha-ceph:~/Desktop/clone/Linux/test$ uniq -d uniq.txt
+It contains some repeated lines.
+It contains some repeated lines.
+
+marclus@alpha-ceph:~/Desktop/clone/Linux/test$ sort uniq.txt | uniq
+And some are different.
+It contains some repeated lines.
+This is a test file for the uniq command.
+
+marclus@alpha-ceph:~/Desktop/clone/Linux/test$ sort uniq.txt | uniq -u
+This is a test file for the uniq command.
+
+marclus@alpha-ceph:~/Desktop/clone/Linux/test$ uniq -D uniq.txt
+It contains some repeated lines.
+It contains some repeated lines.
+It contains some repeated lines.
+It contains some repeated lines.
+
+marclus@alpha-ceph:~/Desktop/clone/Linux/test$ uniq -c uniq.txt
+      1 This is a test file for the uniq command.
+      2 It contains some repeated lines.
+      1 And some are different.
+      2 It contains some repeated lines.
+      1 And some are different.
+      1 It contains some repeated lines.
+
+
+head [option] | tail [option]
+-n : number of lines to be printed
+-q : if multiple files dosent pint name of file
+-v : -q opposite
+
+marclus@alpha-ceph:~/Desktop/clone/Linux/test$ head headTail.txt
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+marclus@alpha-ceph:~/Desktop/clone/Linux/test$ tail headTail.txt
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20

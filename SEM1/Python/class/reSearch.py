@@ -7,4 +7,5 @@ pattern = '^([^:]*).*:([^:\s]*)$'
 
 for line in file:
     s = re.search(pattern, line)
+    # print(s.group())
     print(s.groups()[0], s.groups()[1])

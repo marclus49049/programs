@@ -1,7 +1,0 @@
-tr [options] set1 [set2]
-
-cat sometxt | tr 'abc' '@#&'
-'abc' 'ABC' # small abc to uppercase ABC
-set is a series of characters
-'[a-z][0-5]' '[A-Z]!@#$%'
-[:upper][:lower]

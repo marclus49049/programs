@@ -1,0 +1,22 @@
+<p id="scroller"></p>
+<script type="text/javascript">
+
+function scroll(position) {
+ var msg = "Symbiosis College-MSC CA.";
+ var out = "";
+ var sc = document.getElementById("scroller");
+ for (var i=0; i < position; i++){
+  out += msg.charAt(i);
+ }
+ out += msg.charAt(position);
+ sc.innerHTML = out;
+ position++;
+ if (position != msg.length) {
+  window.setTimeout(function() { scroll(position); }, 150);
+ }
+ else {
+  window.setTimeout(function() { scroll(0); }, 4000);
+ }
+}
+scroll(0);
+</script>
